@@ -14,6 +14,7 @@ import com.example.thematicworks.viewmodel.AppealcontentViewModel
 import com.example.thematicworks.R
 import com.example.thematicworks.Service.Server.Companion.urlFineAppeal
 import com.example.thematicworks.databinding.FragmentAppealcontentBinding
+import com.google.gson.Gson
 import com.google.gson.JsonObject
 import org.json.JSONArray
 import org.json.JSONObject
@@ -39,24 +40,21 @@ class AppealcontentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 with(binding){
 goout.setOnClickListener {
-//
-//    val requestBody = JSONObject().apply {
-//        put("appeal", JSONObject().apply {
-//            put("remark", viewModel.appeal.value?.remark)
-//
-//        })
-//        put("menu", JSONArray(viewModel.menu.value))
-//    }
-//    val requestBodyJson = requestBody.toString()
-//    val respBody = requestTask<JsonObject>(urlFineAppeal,"POST",requestBodyJson)
-//respBody?.run {
-//if (get("successful").asBoolean){
-    Navigation.findNavController(it).navigate(R.id.appealFragment)
-    Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
-//}
-//}
+//    val list = viewModel.menu.value
+//    val APPeal = viewModel.appeal.value
+//    val gson = Gson()
+//    var jsonObject = JsonObject()
+//    jsonObject.addProperty("menu", gson.toJson(list))
+//    jsonObject.addProperty("appeal", gson.toJson(APPeal))
+//    val respBody = requestTask<JsonObject>(urlFineAppeal, "POST", jsonObject.toString())
+  //  respBody?.run {
+    //    if (get("successful").asBoolean) {
+            Navigation.findNavController(it).navigate(R.id.appealFragment)
+            Toast.makeText(requireContext(), "申訴成功", Toast.LENGTH_SHORT).show()
+      //  }
+    //}我把上傳到Server端的部分註解掉,以方便直接執行
+
 }
-//註解掉的部分,是傳送到Server端,先註解掉才能執行
 }
     }
 }

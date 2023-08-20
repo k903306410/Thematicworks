@@ -16,7 +16,7 @@ import java.net.HttpURLConnection
 import java.net.HttpURLConnection.HTTP_OK
 import java.net.URL
 import java.time.LocalDateTime
-
+//這裡發送請求至後端是老師提供給我們的
 data class Member(
     var id: Int,
     var username: String,
